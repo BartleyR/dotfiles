@@ -15,6 +15,7 @@ To install, open a Terminal window and do the following:
 
 ## Configuration Files
 - `config/.exports`: Contains configuration paths and variables
+- `config/.exports.local`: [optional] Contains local configuration paths and variables that should not be synced across machines
 
 ## Dotfiles
 - `home/.aliases`: Contains aliases that are sourced in `.zshrc`
