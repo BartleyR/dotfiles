@@ -1,8 +1,7 @@
-#!/bin/sh
-
 # Initialize variables
-PATH_TO_PROJECTS="$HOME/Projects"
-LOC_HOME_FILES="home"
+echo ""
+echo " >> Sourcing path variables"
+source ./config/.exports
 
 # Create initial directories
 directories () {
@@ -32,6 +31,7 @@ link_home() {
 				read -p "    >> $file already exists, overwrite? (y/n) : " resp
 				if [ "$resp" = 'y' -o "$resp" = 'Y' ] ; then
 					ln -sfv "$PWD/$LOC_HOME_FILES/$file" "$HOME"
+					echo ""
 				else
 					echo "       >> Did not overwrite $file"
 				fi
@@ -39,7 +39,6 @@ link_home() {
 				ln -sv "$PWD/$LOC_HOME_FILES/$file" "$HOME"
 			fi
 		done
-		echo ""
 		echo " >> Symlinking to home directory complete"
 	else
 		echo ""
