@@ -24,7 +24,7 @@ unset __conda_setup
 # <<< conda init <<<
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/bartleyrichardson/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # Powerlevel9K customizations
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir vcs)
