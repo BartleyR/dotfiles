@@ -18,6 +18,8 @@ To install, open a Terminal window and do the following:
 - `config/.exports.local`: [optional] Contains local configuration paths and variables that should not be synced across machines
 
 ## Dotfiles
+Dotfiles are organized into folders based on where the files live in the OS. For example, files in the `home` folder live inside the `$HOME` directory on the OS.
+
 - `home/.aliases`: Contains aliases that are sourced in `.zshrc`
 - `home/.functions`: Contains functions that are sourced in `.zshrc`
 - `home/.vimrc`: Configuration file for VIM
