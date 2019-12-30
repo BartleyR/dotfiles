@@ -23,15 +23,13 @@ directories () {
 link_home() {
 	echo ""
 	echo " >> Linking dotfiles from this repo to the home directory"
-	echo " >> Proceed? (y/n)"
-	read resp
+	read -p " >> Proceed? (y/n) : " resp
 
 	if [ "$resp" = 'y' -o "$resp" = 'Y' ] ; then
 		echo ""
 		for file in $( ls -A ./$LOC_HOME_FILES/ | grep -vE '\.exclude*|\.git$|\.gitignore|.*.md' ) ; do
 			if [ $file ] ; then
-				echo "    >> $file already exists, overwrite? (y/n)"
-				read resp
+				read -p "    >> $file already exists, overwrite? (y/n) : " resp
 				if [ "$resp" = 'y' -o "$resp" = 'Y' ] ; then
 					ln -sfv "$PWD/$LOC_HOME_FILES/$file" "$HOME"
 				else
@@ -41,8 +39,10 @@ link_home() {
 				ln -sv "$PWD/$LOC_HOME_FILES/$file" "$HOME"
 			fi
 		done
+		echo ""
 		echo " >> Symlinking to home directory complete"
 	else
+		echo ""
 		echo " >> Symlinking to home directory cancelled by user"
 		return -1
 	fi
