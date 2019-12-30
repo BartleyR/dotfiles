@@ -5,8 +5,14 @@ $PATH_TO_PROJECTS = "$HOME/Projects"
 
 # Create initial directories
 directories () {
-	echo "Making a Projects folder in $PATH_TO_PROJECTS if it doesn't already exist"
-	mkdir -p "$PATH_TO_PROJECTS"
+	echo "Checking to make sure the $PATH_TO_PROJECTS directory exists"
+
+	if [ ! -d "$PATH_TO_PROJECTS/Projects/" ] ; then
+		echo "Making directory $PATH_TO_PROJECTS"
+		mkdir -p "$PATH_TO_PROJECTS"
+	else
+		echo "Directory already exists"
+	fi
 }
 
 # TODO : Delete symlinks to deleted files
