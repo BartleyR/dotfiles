@@ -1,6 +1,6 @@
-#   -----------------------------
+#   ----------------------------------------
 #   1.  COMMON ALIASES
-#   -----------------------------
+#   ----------------------------------------
 
 alias cp='cp -iv'                           # Preferred 'cp' implementation
 alias mv='mv -iv'                           # Preferred 'mv' implementation
@@ -27,3 +27,9 @@ trash () { command mv "$@" ~/.Trash ; }     # trash:        Moves a file to the 
 ql () { qlmanage -p "$*" >& /dev/null; }    # ql:           Opens any file in MacOS Quicklook Preview
 alias DT='tee ~/Desktop/terminalOut.txt'    # DT:           Pipe content to file on MacOS Desktop
 alias fileCount='ls -1 | wc -l'             # fileCount:    Count number of files in a directory
+
+
+#   ----------------------------------------
+#   2.  SEARCHING
+#   ----------------------------------------
+alias qfind="find . -name "                 # qfind:    Quickly search for file
