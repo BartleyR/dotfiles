@@ -11,7 +11,7 @@ assignees: ''
 A clear and concise description of what the bug is.
 
 **Steps/Code to reproduce the bug**
-A clear, concise, and minimal list of steps and/or code that is required to reproduce the bug. You can use [this guide](http://matthewrocklin.com/blog/work/2018/02/28/minimal-bug-reports) to help you craft a minimal bug report.
+A clear, concise, and minimal list of steps and/or code that is required to reproduce the bug. You can use this guide (http://matthewrocklin.com/blog/work/2018/02/28/minimal-bug-reports) to help you craft a minimal bug report.
 
 **Expected behavior**
 A clear and concise description of what you expected to happen.
