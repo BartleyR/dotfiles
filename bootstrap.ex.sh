@@ -27,7 +27,7 @@ link_home() {
 	if [ "$resp" = 'y' -o "$resp" = 'Y' ] ; then
 		echo ""
 		for file in $( ls -A ./$LOC_HOME_FILES/ | grep -vE '\.exclude*|\.git$|\.gitignore|.*.md' ) ; do
-			if [ $HOME/$file ] ; then
+			if [ -f $HOME/$file ] ; then
 				read -p "    >> $file already exists, overwrite? (y/n) : " resp
 				if [ "$resp" = 'y' -o "$resp" = 'Y' ] ; then
 					ln -sfv "$PWD/$LOC_HOME_FILES/$file" "$HOME"
