@@ -27,9 +27,10 @@ link_home() {
 	read resp
 
 	if [ "$resp" = 'y' -o "$resp" = 'Y' ] ; then
+		echo ""
 		for file in $( ls -A ./$LOC_HOME_FILES/ | grep -vE '\.exclude*|\.git$|\.gitignore|.*.md' ) ; do
 			if [ $file ] ; then
-				echo "       >> $file already exists, overwrite? (y/n)"
+				echo "    >> $file already exists, overwrite? (y/n)"
 				read resp
 				if [ "$resp" = 'y' -o "$resp" = 'Y' ] ; then
 					ln -sfv "$PWD/$LOC_HOME_FILES/$file" "$HOME"
@@ -40,9 +41,9 @@ link_home() {
 				ln -sv "$PWD/$LOC_HOME_FILES/$file" "$HOME"
 			fi
 		done
-		echo "    >> Symlinking to home directory complete"
+		echo " >> Symlinking to home directory complete"
 	else
-		echo "    >> Symlinking to home directory cancelled by user"
+		echo " >> Symlinking to home directory cancelled by user"
 		return -1
 	fi
 }
