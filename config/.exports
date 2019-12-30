@@ -1,0 +1,8 @@
+export PATH_TO_PROJECTS="$HOME/Projects"
+echo "PATH_TO_PROJECTS = $PATH_TO_PROJECTS"
+
+export LOC_HOME_FILES="home"
+echo "LOC_HOME_FILES = $LOC_HOME_FILES"
+
+# This line exports local changes (if necessary)
+[ -f ".exports.local" ] && source ".exports.local"
