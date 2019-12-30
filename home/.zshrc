@@ -5,15 +5,15 @@
 # added by Anaconda3 2019.10 installer
 # >>> conda init >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$(CONDA_REPORT_ERRORS=false '/Users/bartleyrichardson/opt/anaconda3/bin/conda' shell.bash hook 2> /dev/null)"
+__conda_setup="$(CONDA_REPORT_ERRORS=false '$HOME/anaconda3/bin/conda' shell.bash hook 2> /dev/null)"
 if [ $? -eq 0 ]; then
     \eval "$__conda_setup"
 else
-    if [ -f "/Users/bartleyrichardson/opt/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/Users/bartleyrichardson/opt/anaconda3/etc/profile.d/conda.sh"
+    if [ -f "$HOME/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "$HOME/anaconda3/etc/profile.d/conda.sh"
         CONDA_CHANGEPS1=false conda activate base
     else
-        \export PATH="/Users/bartleyrichardson/opt/anaconda3/bin:$PATH"
+        \export PATH="$HOME/anaconda3/bin:$PATH"
     fi
 fi
 
