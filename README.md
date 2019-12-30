@@ -21,3 +21,6 @@ To install, open a Terminal window and do the following:
 - `home/.functions`: Contains functions that are sourced in `.zshrc`
 - `home/.vimrc`: Configuration file for VIM
 - `home/.zshrc`: ZSH configuration file
+
+## References
+Inspiration taken from [this GitHub repo](https://github.com/ajmalsiddiqui/dotfiles)
