@@ -6,5 +6,9 @@ echo "PATH_TO_PROJECTS = $PATH_TO_PROJECTS"
 export LOC_HOME_FILES="home"
 echo "LOC_HOME_FILES = $LOC_HOME_FILES"
 
-# This line exports local changes (if necessary)
-[ -f ".exports.local" ] && source ".exports.local"
+# Export local changes if present
+if [ -f "./config/.exports.local" ] ; then
+	echo ""
+	echo " >> Local exports file found"
+	source "./config/.exports.local"
+fi

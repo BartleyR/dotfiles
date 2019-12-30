@@ -1,7 +1,4 @@
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
-# export PATH="/Users/bartleyrichardson/opt/anaconda3/bin:$PATH"
-
+# Manually modified conda init block, replacing hard coded home directory absolute path with $HOME
 # added by Anaconda3 2019.10 installer
 # >>> conda init >>>
 # !! Contents within this block are managed by 'conda init' !!

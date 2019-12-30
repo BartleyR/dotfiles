@@ -1,5 +1,5 @@
-# BartleyR's dotfiles
-<hr />
+# Custom dotfiles
+<hr/>
 This is my collection of dotfiles and boostrap scripts that make it easy to sync configurations between computers and set up a new computer.
 
 ## Installation
