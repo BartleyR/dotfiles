@@ -1,5 +1,4 @@
 # Custom dotfiles
-<hr/>
 This is my collection of dotfiles and boostrap scripts that make it easy to sync configurations between computers and set up a new computer. While most of the customizations will work on any Linux/OS system, they are specifically written for and tested on [macOS](https://www.apple.com/macos/). Scripts were most recently tested with macOS Catalina 10.15.2.
 
 ## Installation
