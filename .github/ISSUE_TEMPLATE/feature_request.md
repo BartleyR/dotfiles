@@ -2,7 +2,7 @@
 name: Feature request
 about: Suggest an idea for dotfiles
 title: "[FEA]"
-labels: ''
+labels: feature request
 assignees: ''
 
 ---
