@@ -4,7 +4,7 @@
 
 alias cp='cp -iv'                           # Preferred 'cp' implementation
 alias mv='mv -iv'                           # Preferred 'mv' implementation
-# alias lla='ls -alh'							# Preferred 'lla' implementation
+alias lla='ls -alh'							# Preferred 'lla' implementation
 alias lll='ls -alh'					    	# Preferred 'lll' implementation
 # alias mkdir='mkdir -pv'                     # Preferred 'mkdir' implementation
 alias less='less -FSRXc'                    # Preferred 'less' implementation
