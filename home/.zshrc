@@ -128,3 +128,5 @@ source .aliases
 
 # Add personal functions
 source .functions
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh" || true
+
