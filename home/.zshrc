@@ -129,5 +129,8 @@ source .aliases
 # Add personal functions
 source .functions
 
+# Add local aliases and functions
+test -e "${HOME}/.aliases.local" && source "${HOME}/.aliases.local || true
+
 # Add iTerm2 integration
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh" || true
