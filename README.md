@@ -1,10 +1,10 @@
 # Custom dotfiles
-This is my collection of dotfiles and boostrap scripts that make it easy to sync configurations between computers and set up a new computer. While most of the customizations will work on any Linux/OS system, they are specifically written for and tested on [macOS](https://www.apple.com/macos/). Scripts were most recently tested with macOS Catalina 10.15.2 and iTerm2.
+This is my collection of dotfiles and boostrap scripts that make it easy to sync configurations between computers and set up a new computer. While most of the customizations will work on any Linux/OS system, they are specifically written for and tested on [macOS](https://www.apple.com/macos/). Scripts were most recently tested with macOS [Catalina 10.15.2](https://support.apple.com/en-us/HT210642) and [iTerm2](https://iterm2.com).
 
 ## Installation
 > Note: The `boostrap.ex.sh` script has the potential to overwrite your existing configurations. Please make a backup of your existing dotfiles before you proceed.
 
-To install, open a Terminal window and do the following:
+To install, open a terminal window and do the following:
 
 1. Clone this repo: `git clone https://github.com/BartleyR/dotfiles.git`
 2. Change directories into the repo: `cd dotfiles`
