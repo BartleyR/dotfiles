@@ -1,10 +1,17 @@
-# Path to the projects directory
-export PATH_TO_PROJECTS="$HOME/Projects"
-echo "PATH_TO_PROJECTS = $PATH_TO_PROJECTS"
+# Check to see if local config is present
+if [ -f "./config/.config.local" ] ; then
+	echo ""
+	echo " >> Local config file found"
+	source "./config/.config.local"
+else
+	# Path to the projects directory
+	export PATH_TO_PROJECTS="$HOME/Projects"
+	echo "PATH_TO_PROJECTS = $PATH_TO_PROJECTS"
 
-# Folder location for all of the dotfiles that belong in the home directory
-export LOC_HOME_FILES="home"
-echo "LOC_HOME_FILES = $LOC_HOME_FILES"
+	# Folder location for all of the dotfiles that belong in the home directory
+	export LOC_HOME_FILES="home"
+	echo "LOC_HOME_FILES = $LOC_HOME_FILES"
+fi
 
 # Export local changes if present
 if [ -f "./config/.exports.local" ] ; then
