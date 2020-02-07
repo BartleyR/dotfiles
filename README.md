@@ -24,5 +24,8 @@ Dotfiles are organized into folders based on where the files live in the OS. For
 - `home/.vimrc`: Configuration file for VIM
 - `home/.zshrc`: ZSH configuration file
 
+## Local Custom Aliases and Functions [optional]
+There may be instances where it's desierable to have some aliases and functions that exist on a single machine or OS type (e.g., only on macOS and not on Ubuntu). To accomplish this, place the local customizations in a file named `.aliases.local` in the `$HOME` directory. This file will be sourced via `.zshrc` if it exists.
+
 ## References
 Inspiration taken from [this GitHub repo](https://github.com/ajmalsiddiqui/dotfiles)
