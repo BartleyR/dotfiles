@@ -39,7 +39,7 @@ Dotfiles are organized into folders based on where the files live in the OS. For
 - `home/.zshrc`: ZSH configuration file
 
 ## Local Custom Aliases and Functions [optional]
-There may be instances where it's desierable to have some aliases and functions that exist on a single machine or OS type (e.g., only on macOS and not on Ubuntu). To accomplish this, place the local customizations in a file named `.aliases.local` in the `$HOME` directory. This file will be sourced via `.zshrc` if it exists.
+There may be instances where it's desierable to have some aliases and functions that exist on a single machine or OS type (e.g., only on macOS and not on Ubuntu). To accomplish this, place the local customizations in a file named `.aliases_functions.local` in the `$HOME` directory. This file will be sourced via `.zshrc` if it exists.
 
 ## Testing
 Scripts and configurations have been tested with the following operating systems and terminals.

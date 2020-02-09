@@ -124,13 +124,13 @@ source $ZSH/oh-my-zsh.sh
 TERM="xterm-256color"
 
 # Add personal aliases
-source .aliases
+test -e "${HOME}/.aliases" && source "${HOME}/.aliases" || true
 
 # Add personal functions
-source .functions
+test -e "${HOME}/.functions" && source "${HOME}/.functions" || true
 
 # Add local aliases and functions
-test -e "${HOME}/.aliases.local" && source "${HOME}/.aliases.local" || true
+test -e "${HOME}/.aliases_functions.local" && source "${HOME}/.aliases_functions.local" || true
 
 # Add iTerm2 integration
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh" || true
