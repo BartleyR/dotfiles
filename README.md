@@ -1,5 +1,5 @@
 # Custom dotfiles
-This is my collection of dotfiles and boostrap scripts that make it easy to sync configurations between computers and set up a new computer. While most of the customizations will work on any Linux/OS system, they are specifically written for and tested on [macOS](https://www.apple.com/macos/). Scripts were most recently tested with macOS [Catalina 10.15.2](https://support.apple.com/en-us/HT210642) and [iTerm2](https://iterm2.com).
+This is my collection of dotfiles and boostrap scripts that make it easy to sync configurations between computers and set up a new computer. While most of the customizations will work on any Linux/OS system, they are specifically written for and tested on [macOS](https://www.apple.com/macos/).
 
 ## Installation
 > Note: The `boostrap.ex.sh` script has the potential to overwrite your existing configurations. Please make a backup of your existing dotfiles before you proceed.
@@ -40,6 +40,13 @@ Dotfiles are organized into folders based on where the files live in the OS. For
 
 ## Local Custom Aliases and Functions [optional]
 There may be instances where it's desierable to have some aliases and functions that exist on a single machine or OS type (e.g., only on macOS and not on Ubuntu). To accomplish this, place the local customizations in a file named `.aliases.local` in the `$HOME` directory. This file will be sourced via `.zshrc` if it exists.
+
+## Testing
+Scripts and configurations have been tested with the following operating systems and terminals.
+
+* [macOS Catalina 10.15.2](https://support.apple.com/en-us/HT210642) 
+* [iTerm2 Build 3.3.8beta5](https://iterm2.com)
+* [Ubuntu 18.04.3](https://wiki.ubuntu.com/BionicBeaver/ReleaseNotes)
 
 ## References
 Inspiration taken from [this GitHub repo](https://github.com/ajmalsiddiqui/dotfiles)
