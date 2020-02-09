@@ -4,6 +4,8 @@ This is my collection of dotfiles and boostrap scripts that make it easy to sync
 ## Installation
 > Note: The `boostrap.sh` script has the potential to overwrite your existing configurations. Please make a backup of your existing dotfiles before you proceed.
 
+Before you install, you must have `curl` installed on your machine.
+
 To install, open a terminal window and do the following:
 
 1. Clone this repo: `git clone https://github.com/BartleyR/dotfiles.git`
