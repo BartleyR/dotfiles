@@ -9,7 +9,7 @@ To install, open a terminal window and do the following:
 1. Clone this repo: `git clone https://github.com/BartleyR/dotfiles.git`
 2. Change directories into the repo: `cd dotfiles`
 3. Make any configuration changes necessary in the `config/.exports` file
-4. Run the bootstrap script: `sh bootstrap.ex.sh`
+4. Run the bootstrap script: `sh bootstrap.sh`
 5. Restart your terminal
 
 The script now includes the options to install [Oh My ZSH](https://ohmyz.sh) as well as the [Powerlevel9k theme](https://github.com/Powerlevel9k/powerlevel9k). These can also be installed separately. The Powerlevel9k theme requires [Powerline fonts](https://github.com/powerline/fonts) or a similar font package. These **are not** installed by the bootstrap script, but the script provides directions for Linux users to install on their own. Complete [installation instructions for Powerline fonts](https://github.com/powerline/fonts) are available for other operating systems.
@@ -17,14 +17,14 @@ The script now includes the options to install [Oh My ZSH](https://ohmyz.sh) as 
 ## Requirements
 This custom dotfile environment relies on the [Z shell](https://en.wikipedia.org/wiki/Z_shell) (zsh). If you wish to use the Bash shell, you can still use the individual dotfiles and source them in your `.bashrc` file. 
 
-Requirements that can be installed by `bootstrap.ex.sh` (i.e., no need to separately install):
+Requirements that can be installed by `bootstrap.sh` (i.e., no need to separately install):
 
 * [Oh My ZSH](https://ohmyz.sh)
 * [Powerlevel9k theme](https://github.com/Powerlevel9k/powerlevel9k)
 
 Requirements that must be installed separately:
 
-* [Powerline fonts](https://github.com/powerline/fonts): instructions for installation are shown after running `bootstrap.ex.sh`
+* [Powerline fonts](https://github.com/powerline/fonts): instructions for installation are shown after running `bootstrap.sh`
 
 ## Configuration Files
 - `config/.exports`: Contains configuration paths and variables
