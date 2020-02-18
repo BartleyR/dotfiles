@@ -69,7 +69,7 @@ summary() {
 	echo ""
 	echo " >> If on a Linux system, you can run the command below to install Powerline fonts: "
 	echo ""
-	echo "     sudo apt-get install fonts-powerline"
+	echo "     sudo apt install powerline fonts-powerline"
 	echo ""
 }
 
