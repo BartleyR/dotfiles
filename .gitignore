@@ -1,2 +1,6 @@
 # Local configuration files
 *.local
+
+# temp files and directories
+*.swp
+.DS_Store
