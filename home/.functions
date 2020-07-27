@@ -61,7 +61,7 @@ trash () { command mv "$@" ~/.Trash ; }     # trash:        Moves a file to the 
         if [ -f $1 ]; then
             openssl enc -aes-256-cbc -d -in $1 | tar xz
         else
-            echo "'$1 is not a valid file"
+            echo "'$1' is not a valid file"
         fi
     }
 
@@ -69,9 +69,9 @@ trash () { command mv "$@" ~/.Trash ; }     # trash:        Moves a file to the 
 #   ----------------------------------------
 #   2.  SEARCHING
 #   ----------------------------------------
-ff () { /usr/bin/find . -name "$@" ; }      # ff:       Find file under the current directory
-ffs () { /usr/bin/find . -name "$@"'*' ; }  # ffs:      Find file whose name starts with a given string
-ffe () { /usr/bin/find . -name '*'"$@" ; }  # ffe:      Find file whose name ends with a given string
+    ff () { /usr/bin/find . -name "$@" ; }      # ff:       Find file under the current directory
+    ffs () { /usr/bin/find . -name "$@"'*' ; }  # ffs:      Find file whose name starts with a given string
+    ffe () { /usr/bin/find . -name '*'"$@" ; }  # ffe:      Find file whose name ends with a given string
 
 #   ----------------------------------------
 #   3.  NETWORKING
@@ -85,3 +85,18 @@ ffe () { /usr/bin/find . -name '*'"$@" ; }  # ffe:      Find file whose name end
     myextip () {
         curl ipecho.net/plain ; echo
     }
+
+ #   ----------------------------------------
+ #   4.  CONTAINER MANAGEMENT
+ #   ----------------------------------------
+
+    dkrstoprm() {
+        if [ $1 ]; then
+            echo "Stopping container: $1"
+            docker stop $1
+            echo "Removing container: $1"
+            docker rm $1
+        else
+            echo "Must specify a container name"
+        fi
+     }
