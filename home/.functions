@@ -78,8 +78,14 @@ trash () { command mv "$@" ~/.Trash ; }     # trash:        Moves a file to the 
 #   ----------------------------------------
 
     myip () { 
-        interface=${1:-en0}
-        ipconfig getifaddr $interface 
+    	if [[ "$OSTYPE" == "linux-gnu"* ]]; then		# Linux OS
+       		hostname -I
+		elif [[ "$OSTYPE" == "darwin"* ]]; then			# macOS
+        	interface=${1:-en0}
+        	ipconfig getifaddr $interface 
+        else
+        	echo "Unsupported OS. Only implemented for Linux and macOS."
+        fi
     }
 
     myextip () {
