@@ -14,7 +14,7 @@ To install, open a terminal window and do the following:
 4. Run the bootstrap script: `sh bootstrap.sh`
 5. Restart your terminal
 
-The script now includes the options to install [Oh My ZSH](https://ohmyz.sh) as well as the [Powerlevel9k theme](https://github.com/Powerlevel9k/powerlevel9k), but they can also be installed separately. The Powerlevel9k theme requires [Powerline fonts](https://github.com/powerline/fonts) or a similar font package. More information about requirements is in the section below.
+The script now includes the options to install [Oh My ZSH](https://ohmyz.sh) as well as the [Powerlevel10k theme](https://github.com/romkatv/powerlevel10k), but they can also be installed separately. The Powerlevel10k theme highly recommends a [patched font](https://github.com/romkatv/powerlevel10k#meslo-nerd-font-patched-for-powerlevel10k), but you can also use [Powerline fonts](https://github.com/powerline/fonts) or a similar font package. More information about requirements is in the section below.
 
 ## Requirements
 This custom dotfile environment relies on the [Z shell](https://en.wikipedia.org/wiki/Z_shell) (zsh). If you wish to use the Bash shell, you can still use the individual dotfiles and source them in your `.bashrc` file. 
