@@ -22,11 +22,12 @@ This custom dotfile environment relies on the [Z shell](https://en.wikipedia.org
 Requirements that can be installed by `bootstrap.sh` (i.e., no need to separately install):
 
 * [Oh My ZSH](https://ohmyz.sh)
-* [Powerlevel9k theme](https://github.com/Powerlevel9k/powerlevel9k)
+* [Powerlevel10k theme](https://github.com/romkatv/powerlevel10k)
 
 Requirements that must be installed separately:
 
 * [Powerline fonts](https://github.com/powerline/fonts): instructions for installation are shown after running `bootstrap.sh`
+* For the Powerlevel10k theme, you may optionally install a patched font. [Follow the directions to do this and configure your terminal](https://github.com/romkatv/powerlevel10k#meslo-nerd-font-patched-for-powerlevel10k).
 
 ## Configuration Files
 - `config/.exports`: Contains configuration paths and variables
