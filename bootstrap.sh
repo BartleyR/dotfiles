@@ -12,9 +12,17 @@ oh_my_zsh() {
 }
 
 # Install Powerlevel9k
+# Currently archived. Leaving this here for vis, but switching to Powerlevel10k
 powerlevel9k() {
 	echo ""
 	git clone https://github.com/bhilburn/powerlevel9k.git $HOME/.oh-my-zsh/custom/themes/powerlevel9k
+	echo ""
+}
+
+# Install Powerlevel10k
+powerlevel10k() {
+	echo ""
+	git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 	echo ""
 }
 
@@ -66,10 +74,15 @@ summary() {
 	echo " >> Configuration complete"
 	echo " >> The script did not check to ensure Powerline fonts are installed."
 	echo " >> Visit https://github.com/powerline/fonts for install information."
+	echo " >> If using Powerlevel10k, visit https://github.com/romkatv/powerlevel10k#meslo-nerd-font-patched-for-powerlevel10k for more info."
 	echo ""
 	echo " >> If on a Linux system, you can run the command below to install Powerline fonts: "
 	echo ""
 	echo "     sudo apt install powerline fonts-powerline"
+	echo ""
+	echo " >> If on a macOS system, you can install the correct fonts by visiting the site: "
+	echo ""
+	echo "     https://github.com/romkatv/powerlevel10k#meslo-nerd-font-patched-for-powerlevel10k"
 	echo ""
 }
 
@@ -88,19 +101,19 @@ else
 fi
 
 echo ""
-echo "Powerlevel9k Theme"
+echo "Powerlevel10k Theme"
 echo "-----------------------------------------------------------------------------------"
-if [ ! -d "$HOME/.oh-my-zsh/custom/themes/powerlevel9k/" ] ; then
-	echo " >> The Powerlevel9k theme is not installed with Oh My ZSH. You may have it installed elsewhere (not checked)."
-	echo " >> The default configuration of this repo requires the Powerlevel9k theme."
-	read -p " >> Would you like to install the Powerlevel9k theme for Oh My ZSH? (y/n) : " resp
+if [ ! -d "$HOME/.oh-my-zsh/custom/themes/powerlevel10k/" ] ; then
+	echo " >> The Powerlevel10k theme is not installed with Oh My ZSH. You may have it installed elsewhere (not checked)."
+	echo " >> The default configuration of this repo requires the Powerlevel10k theme."
+	read -p " >> Would you like to install the Powerlevel10k theme for Oh My ZSH? (y/n) : " resp
 	if [ "$resp" = 'y' -o "$resp" = 'Y' ] ; then
-		powerlevel9k
+		powerlevel10k
 	else
-		echo " >> Skipping the Powerlevel9k installation."
+		echo " >> Skipping the Powerlevel10k installation."
 	fi
 else
-	echo " >> The Powerlevel9k theme is already installed for Oh My ZSH."
+	echo " >> The Powerlevel10k theme is already installed for Oh My ZSH."
 	echo " >> Skipping install."
 fi
 
