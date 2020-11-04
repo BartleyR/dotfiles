@@ -1,5 +1,5 @@
 # Custom dotfiles
-This is my collection of dotfiles and boostrap scripts that make it easy to sync configurations between computers and set up a new computer. While most of the customizations will work on any Linux/OS system, they are specifically written for and tested on [macOS](https://www.apple.com/macos/).
+This is my collection of dotfiles and boostrap scripts that make it easy to sync configurations between computers and set up a new computer. While most of the customizations will work on any Linux/OS system, they are specifically written for and tested on [macOS](https://www.apple.com/macos/). It can also be used on Linux-based machines, but not all functions will work correctly.
 
 ## Installation
 > Note: The `boostrap.sh` script has the potential to overwrite your existing configurations. Please make a backup of your existing dotfiles before you proceed.
