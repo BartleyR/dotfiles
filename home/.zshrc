@@ -99,6 +99,7 @@ plugins=(git
          screen
          sublime
          vi-mode
+	 docker
          )
 
 source $ZSH/oh-my-zsh.sh
