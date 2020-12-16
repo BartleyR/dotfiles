@@ -1,5 +1,5 @@
 # Custom dotfiles
-This is my collection of dotfiles and boostrap scripts that make it easy to sync configurations between computers and set up a new computer. While most of the customizations will work on any Linux/OS system, they are specifically written for and tested on [macOS](https://www.apple.com/macos/). It can also be used on Linux-based machines, but not all functions will work correctly.
+This is my collection of dotfiles and boostrap scripts that make it easy to sync configurations between computers and set up a new computer. While most of the customizations will work on any Linux/OS system, they are specifically written for and tested on [macOS](https://www.apple.com/macos/). It can also be used on Linux-based machines with some adjustments to functions that might not produce correct results.
 
 ## Installation
 > Note: The `boostrap.sh` script has the potential to overwrite your existing configurations. Please make a backup of your existing dotfiles before you proceed.
@@ -11,7 +11,15 @@ To install, open a terminal window and do the following:
 1. Clone this repo: `git clone https://github.com/BartleyR/dotfiles.git`
 2. Change directories into the repo: `cd dotfiles`
 3. Make any configuration changes necessary in the `config/.exports` file
-4. Run the bootstrap script: `sh bootstrap.sh`
+4. Run the bootstrap script
+
+	```
+	# for macOS machines
+	sh bootstrap.sh
+	
+	# for Ubuntu machines
+	bash bootstrap.sh
+	```
 5. Restart your terminal
 
 The script now includes the options to install [Oh My ZSH](https://ohmyz.sh) as well as the [Powerlevel10k theme](https://github.com/romkatv/powerlevel10k), but they can also be installed separately. The Powerlevel10k theme highly recommends a [patched font](https://github.com/romkatv/powerlevel10k#meslo-nerd-font-patched-for-powerlevel10k), but you can also use [Powerline fonts](https://github.com/powerline/fonts) or a similar font package. More information about requirements is in the section below.
@@ -47,9 +55,9 @@ There may be instances where it's desierable to have some aliases and functions 
 ## Testing
 Scripts and configurations have been tested with the following operating systems and terminals.
 
-* [macOS Catalina 10.15.2](https://support.apple.com/en-us/HT210642) 
-* [iTerm2 Build 3.3.8beta5](https://iterm2.com)
-* [Ubuntu 18.04.3](https://wiki.ubuntu.com/BionicBeaver/ReleaseNotes)
+* [macOS Catalina 10.15.7](https://support.apple.com/en-us/HT210642) 
+* [iTerm2 Build 3.4.3](https://iterm2.com)
+* [Ubuntu 20.04.1](https://wiki.ubuntu.com/FocalFossa/ReleaseNotes/ChangeSummary/20.04.1)
 
 ## References
 Inspiration taken from [this GitHub repo](https://github.com/ajmalsiddiqui/dotfiles)
