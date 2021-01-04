@@ -98,7 +98,7 @@ plugins=(git
          osx
          screen
          sublime
-	 docker
+	 	 docker
          )
 
 source $ZSH/oh-my-zsh.sh
