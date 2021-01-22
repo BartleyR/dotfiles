@@ -20,7 +20,7 @@ To install, open a terminal window and do the following:
 	# for Ubuntu machines
 	bash bootstrap.sh
 	```
-5. Restart your terminal
+5. Restart your terminal instance
 
 The script now includes the options to install [Oh My ZSH](https://ohmyz.sh) as well as the [Powerlevel10k theme](https://github.com/romkatv/powerlevel10k), but they can also be installed separately. The Powerlevel10k theme highly recommends a [patched font](https://github.com/romkatv/powerlevel10k#meslo-nerd-font-patched-for-powerlevel10k), but you can also use [Powerline fonts](https://github.com/powerline/fonts) or a similar font package. More information about requirements is in the section below.
 
