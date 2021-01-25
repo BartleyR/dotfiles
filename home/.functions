@@ -74,7 +74,6 @@ trash () { command mv "$@" ~/.Trash ; }     # trash:        Moves a file to the 
 	      local path=$1
 	   fi
 
-	  #find $path -iname '._*' -exec rm -rf {} \;		# this will perform it recursively
 	  find $path -iname '._*' -delete
 
 	}
