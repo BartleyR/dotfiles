@@ -73,7 +73,6 @@ trash () { command mv "$@" ~/.Trash ; }     # trash:        Moves a file to the 
 	   else
 	      local path=$1
 	   fi
-
 	  find $path -iname '._*' -delete
 
 	}
