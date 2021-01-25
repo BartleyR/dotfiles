@@ -65,6 +65,19 @@ trash () { command mv "$@" ~/.Trash ; }     # trash:        Moves a file to the 
         fi
     }
 
+#   rmdot:   remove macOS dot files (._)
+#   ---------------------------------------------------------
+	rmdot () {
+	   if [ -z $1 ]; then
+	      local path=.
+	   else
+	      local path=$1
+	   fi
+
+	  #find $path -iname '._*' -exec rm -rf {} \;		# this will perform it recursively
+	  find $path -iname '._*' -delete
+
+	}
 
 #   ----------------------------------------
 #   2.  SEARCHING
