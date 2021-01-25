@@ -69,12 +69,13 @@ trash () { command mv "$@" ~/.Trash ; }     # trash:        Moves a file to the 
 #   ---------------------------------------------------------
 	rmdot () {
 	   if [ -z $1 ]; then
-	      local path=.
+	      local rmpath=.
 	   else
-	      local path=$1
+	      local rmpath=$1
 	   fi
-	  find $path -iname '._*' -delete
-
+	   
+       find $rmpath -iname '._*' -delete
+       # find $rmpath -iname '._*' -exec rm -rf {} \;          # performs the rm recursively
 	}
 
 #   ----------------------------------------
