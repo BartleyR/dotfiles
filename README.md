@@ -55,8 +55,8 @@ There may be instances where it's desierable to have some aliases and functions 
 ## Testing
 Scripts and configurations have been tested with the following operating systems and terminals.
 
-* [macOS Catalina 10.15.7](https://support.apple.com/en-us/HT210642) 
-* [iTerm2 Build 3.4.3](https://iterm2.com)
+* [macOS Catalina 10.15.7](https://support.apple.com/en-us/HT210642) - [macOS Monterey 12.6.1](https://support.apple.com/en-us/HT213494)
+* [iTerm2 Build 3.4.18](https://iterm2.com)
 * [Ubuntu 20.04.1](https://wiki.ubuntu.com/FocalFossa/ReleaseNotes/ChangeSummary/20.04.1)
 
 ## References
