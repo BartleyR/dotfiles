@@ -25,3 +25,10 @@ alias fileCount='ls -1 | wc -l'             # fileCount:    Count number of file
 #   2.  SEARCHING
 #   ----------------------------------------
 alias qfind="find . -name "                 # qfind:    Quickly search for file
+
+
+#   ----------------------------------------
+#   3.  MACOS SPECIFIC
+#   ----------------------------------------
+alias finderShowInvisibleFiles='defaults write com.apple.Finder AppleShowAllFiles true'
+alias finderHideInvisibleFiles='defaults write com.apple.Finder AppleShowAllFiles false'
