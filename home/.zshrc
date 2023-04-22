@@ -119,5 +119,24 @@ test -e "${HOME}/.aliases_functions.local" && source "${HOME}/.aliases_functions
 # Add iTerm2 integration
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh" || true
 
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/Users/brichardson/mambaforge/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/Users/brichardson/mambaforge/etc/profile.d/conda.sh" ]; then
+        . "/Users/brichardson/mambaforge/etc/profile.d/conda.sh"
+    else
+        export PATH="/Users/brichardson/mambaforge/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+
+if [ -f "/Users/brichardson/mambaforge/etc/profile.d/mamba.sh" ]; then
+    . "/Users/brichardson/mambaforge/etc/profile.d/mamba.sh"
+fi
+# <<< conda initialize <<<
+
 # Fig post block. Keep at the bottom of this file.
 [[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
