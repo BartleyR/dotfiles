@@ -52,11 +52,23 @@ Dotfiles are organized into folders based on where the files live in the OS. For
 ## Local Custom Aliases and Functions [optional]
 There may be instances where it's desierable to have some aliases and functions that exist on a single machine or OS type (e.g., only on macOS and not on Ubuntu). To accomplish this, place the local customizations in a file named `.aliases_functions.local` in the `$HOME` directory. This file will be sourced via `.zshrc` if it exists.
 
+## Local Path Additions [optional]
+Similarly, there may be instances where it's necessary to have some path customization that exists on a single machine or OS type (e.g., a path to Homebrew only on macOS). To accomplish this, place the local path additions in a file named `.zsh_path_exports.local` in the `$HOME` directory. This file will be sourced via `.zshrc` if it exists.
+
+### Example:
+To add the path to Homebrew to a single machine (and not have this sync across machines), perform the following:
+
+```
+touch .zsh_path_exports.local
+echo "export PATH=$PATH:"/opt/homebrew/bin/" > .zsh_path_exports.local
+```
+Then either restart your terminal or use `source ~/.zshrc` to make the changes in your current shell.
+
 ## Testing
 Scripts and configurations have been tested with the following operating systems and terminals.
 
-* [macOS Catalina 10.15.7](https://support.apple.com/en-us/HT210642) - [macOS Monterey 12.6.1](https://support.apple.com/en-us/HT213494)
-* [iTerm2 Build 3.4.18](https://iterm2.com)
+* [macOS Catalina 10.15.7](https://support.apple.com/en-us/HT210642) - [macOS Monterey 15.3.2](https://support.apple.com/en-us/122283)
+* [iTerm2 Build 3.5.11](https://iterm2.com)
 * [Ubuntu 20.04.1](https://wiki.ubuntu.com/FocalFossa/ReleaseNotes/ChangeSummary/20.04.1)
 
 ## References

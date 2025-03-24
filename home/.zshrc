@@ -1,11 +1,8 @@
-# Fig pre block. Keep at the top of this file.
-[[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
-
-# change conda environment
-# conda activate ds
-
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
+
+# Add additional path exports
+test -e "${HOME}/.zsh_path_exports.local" && source "${HOME}/.zsh_path_exports.local" || true
 
 # Powerlevel9K customizations
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir vcs)
@@ -82,7 +79,6 @@ plugins=(git
          macos
          screen
          sublime
-	 	 docker
          )
 
 source $ZSH/oh-my-zsh.sh
@@ -90,6 +86,7 @@ source $ZSH/oh-my-zsh.sh
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
+
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -118,25 +115,4 @@ test -e "${HOME}/.aliases_functions.local" && source "${HOME}/.aliases_functions
 
 # Add iTerm2 integration
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh" || true
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/Users/brichardson/mambaforge/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/Users/brichardson/mambaforge/etc/profile.d/conda.sh" ]; then
-        . "/Users/brichardson/mambaforge/etc/profile.d/conda.sh"
-    else
-        export PATH="/Users/brichardson/mambaforge/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-
-if [ -f "/Users/brichardson/mambaforge/etc/profile.d/mamba.sh" ]; then
-    . "/Users/brichardson/mambaforge/etc/profile.d/mamba.sh"
-fi
-# <<< conda initialize <<<
-
-# Fig post block. Keep at the bottom of this file.
-[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
+. "$HOME/.local/bin/env"
