@@ -115,4 +115,3 @@ test -e "${HOME}/.aliases_functions.local" && source "${HOME}/.aliases_functions
 
 # Add iTerm2 integration
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh" || true
-. "$HOME/.local/bin/env"
