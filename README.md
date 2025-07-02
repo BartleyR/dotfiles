@@ -39,7 +39,7 @@ Requirements that must be installed separately:
 
 ## Configuration Files
 - `config/.exports`: Contains configuration paths and variables
-- `config/.exports.local`: [optional] Contains local configuration paths and variables that should not be synced across machines
+- `config/.exports_local`: [optional] Contains local configuration paths and variables that should not be synced across machines
 
 ## Dotfiles
 Dotfiles are organized into folders based on where the files live in the OS. For example, files in the `home` folder live inside the `$HOME` directory on the OS.
@@ -50,17 +50,17 @@ Dotfiles are organized into folders based on where the files live in the OS. For
 - `home/.zshrc`: ZSH configuration file
 
 ## Local Custom Aliases and Functions [optional]
-There may be instances where it's desierable to have some aliases and functions that exist on a single machine or OS type (e.g., only on macOS and not on Ubuntu). To accomplish this, place the local customizations in a file named `.aliases_functions.local` in the `$HOME` directory. This file will be sourced via `.zshrc` if it exists.
+There may be instances where it's desierable to have some aliases and functions that exist on a single machine or OS type (e.g., only on macOS and not on Ubuntu). To accomplish this, place the local customizations in a file named `.aliases_functions_local` in the `$HOME` directory. This file will be sourced via `.zshrc` if it exists.
 
 ## Local Path Additions [optional]
-Similarly, there may be instances where it's necessary to have some path customization that exists on a single machine or OS type (e.g., a path to Homebrew only on macOS). To accomplish this, place the local path additions in a file named `.zsh_path_exports.local` in the `$HOME` directory. This file will be sourced via `.zshrc` if it exists.
+Similarly, there may be instances where it's necessary to have some path customization that exists on a single machine or OS type (e.g., a path to Homebrew only on macOS). To accomplish this, place the local path additions in a file named `.zsh_path_exports_local` in the `$HOME` directory. This file will be sourced via `.zshrc` if it exists.
 
 ### Example:
 To add the path to Homebrew to a single machine (and not have this sync across machines), perform the following:
 
 ```
-touch .zsh_path_exports.local
-echo "export PATH=$PATH:"/opt/homebrew/bin/" > .zsh_path_exports.local
+touch .zsh_path_exports_local
+echo "export PATH=$PATH:"/opt/homebrew/bin/" > .zsh_path_exports_local
 ```
 Then either restart your terminal or use `source ~/.zshrc` to make the changes in your current shell.
 

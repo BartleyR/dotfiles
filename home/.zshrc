@@ -2,7 +2,7 @@
 export ZSH="$HOME/.oh-my-zsh"
 
 # Add additional path exports
-test -e "${HOME}/.zsh_path_exports.local" && source "${HOME}/.zsh_path_exports.local" || true
+test -e "${HOME}/.zsh_path_exports_local" && source "${HOME}/.zsh_path_exports_local" || true
 
 # Powerlevel9K customizations
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir vcs)
@@ -111,7 +111,7 @@ test -e "${HOME}/.aliases" && source "${HOME}/.aliases" || true
 test -e "${HOME}/.functions" && source "${HOME}/.functions" || true
 
 # Add local aliases and functions
-test -e "${HOME}/.aliases_functions.local" && source "${HOME}/.aliases_functions.local" || true
+test -e "${HOME}/.aliases_functions_local" && source "${HOME}/.aliases_functions_local" || true
 
 # Add iTerm2 integration
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh" || true

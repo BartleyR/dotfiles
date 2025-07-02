@@ -1,8 +1,8 @@
 # Check to see if local config is present
-if [ -f "./config/.config.local" ] ; then
+if [ -f "./config/.config_local" ] ; then
 	echo ""
 	echo " >> Local config file found"
-	source "./config/.config.local"
+	source "./config/.config_local"
 else
 	# Path to the projects directory
 	export PATH_TO_PROJECTS="$HOME/Projects"
@@ -14,8 +14,8 @@ else
 fi
 
 # Export local changes if present
-if [ -f "./config/.exports.local" ] ; then
+if [ -f "./config/.exports_local" ] ; then
 	echo ""
 	echo " >> Local exports file found"
-	source "./config/.exports.local"
+	source "./config/.exports_local"
 fi
