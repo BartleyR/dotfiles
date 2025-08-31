@@ -5,8 +5,11 @@ export ZSH="$HOME/.oh-my-zsh"
 test -e "${HOME}/.zsh_path_exports_local" && source "${HOME}/.zsh_path_exports_local" || true
 
 # Powerlevel9K customizations
+#POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir vcs)
+#POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status virtualenv root_indicator background_jobs history time)
+
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status anaconda root_indicator background_jobs history time)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status virtualenv root_indicator background_jobs)
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -15,6 +18,10 @@ POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status anaconda root_indicator background_jo
 #ZSH_THEME="agnoster"
 #ZSH_THEME="powerlevel9k/powerlevel9k"
 ZSH_THEME="powerlevel10k/powerlevel10k"
+
+# Configure uv specific formatting
+typeset -g POWERLEVEL9K_VIRTUALENV_SHOW_PYTHON_VERSION=false
+typeset -g POWERLEVEL9K_VIRTUALENV_{IN_PYENV,IN_PYENV_VIRT,USE_PYENV}=false
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
