@@ -48,9 +48,11 @@ Dotfiles are organized into folders based on where the files live in the OS. For
 - `home/.functions`: Contains functions that are sourced in `.zshrc`
 - `home/.vimrc`: Configuration file for VIM
 - `home/.zshrc`: ZSH configuration file
+- `home/.aliases_functions_local`: Optional file that contains local-only aliases and functions
+- `home/.zsh_path_exports_local`: Optional file that has local-only path exports
 
 ## Local Custom Aliases and Functions [optional]
-There may be instances where it's desierable to have some aliases and functions that exist on a single machine or OS type (e.g., only on macOS and not on Ubuntu). To accomplish this, place the local customizations in a file named `.aliases_functions_local` in the `$HOME` directory. This file will be sourced via `.zshrc` if it exists.
+There may be instances where it's desierable to have some aliases and functions that exist on a single machine or OS type (e.g., only on macOS and not on Ubuntu). To accomplish this, place the local customizations in a file named `.aliases_functions_local` in the `$HOME` directory. An example file is provided in this repo. This file will be sourced via `.zshrc` if it exists.
 
 ## Local Path Additions [optional]
 Similarly, there may be instances where it's necessary to have some path customization that exists on a single machine or OS type (e.g., a path to Homebrew only on macOS). To accomplish this, place the local path additions in a file named `.zsh_path_exports_local` in the `$HOME` directory. This file will be sourced via `.zshrc` if it exists.
@@ -58,18 +60,27 @@ Similarly, there may be instances where it's necessary to have some path customi
 ### Example:
 To add the path to Homebrew to a single machine (and not have this sync across machines), perform the following:
 
-```
-touch .zsh_path_exports_local
-echo "export PATH=$PATH:"/opt/homebrew/bin/" > .zsh_path_exports_local
-```
+1. Copy the provided `.zsh_path_exports_local` file to your `$HOME` directory. 
+
+2. Edit the file to include the following:
+
+	```
+	typeset -U PATH path
+	path=(
+	  /opt/homebrew/bin
+	  $path
+	)
+	export PATH
+	```
+
 Then either restart your terminal or use `source ~/.zshrc` to make the changes in your current shell.
 
 ## Testing
 Scripts and configurations have been tested with the following operating systems and terminals.
 
-* [macOS Catalina 10.15.7](https://support.apple.com/en-us/HT210642) - [macOS Monterey 15.3.2](https://support.apple.com/en-us/122283)
-* [iTerm2 Build 3.5.11](https://iterm2.com)
-* [Ubuntu 20.04.1](https://wiki.ubuntu.com/FocalFossa/ReleaseNotes/ChangeSummary/20.04.1)
+* [macOS Catalina 10.15.7](https://support.apple.com/en-us/HT210642) - [macOS Tahoe 26.2](https://support.apple.com/en-us/125886)
+* [iTerm2 Build 3.6.6](https://iterm2.com)
+* [Ubuntu 24.04](https://discourse.ubuntu.com/t/ubuntu-24-04-lts-noble-numbat-release-notes/39890)
 
 ## References
 Inspiration taken from [this GitHub repo](https://github.com/ajmalsiddiqui/dotfiles)

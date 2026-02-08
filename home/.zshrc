@@ -1,9 +1,6 @@
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
-# Add additional path exports
-test -e "${HOME}/.zsh_path_exports_local" && source "${HOME}/.zsh_path_exports_local" || true
-
 # Powerlevel9K customizations
 #POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir vcs)
 #POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status virtualenv root_indicator background_jobs history time)
@@ -112,13 +109,21 @@ source $ZSH/oh-my-zsh.sh
 TERM="xterm-256color"
 
 # Add personal aliases
-test -e "${HOME}/.aliases" && source "${HOME}/.aliases" || true
+#test -e "${HOME}/.aliases" && source "${HOME}/.aliases" || true
+[[ -r ~/.aliases ]] && source ~/.aliases
 
 # Add personal functions
-test -e "${HOME}/.functions" && source "${HOME}/.functions" || true
+#test -e "${HOME}/.functions" && source "${HOME}/.functions" || true
+[[ -r ~/.functions ]] && source ~/.functions
 
 # Add local aliases and functions
-test -e "${HOME}/.aliases_functions_local" && source "${HOME}/.aliases_functions_local" || true
+#test -e "${HOME}/.aliases_functions_local" && source "${HOME}/.aliases_functions_local" || true
+[[ -r ~/.aliases_functions_local ]] && source ~/.aliases_functions_local
 
 # Add iTerm2 integration
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh" || true
+#test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh" || true
+[[ -r ~/.iterm2_shell_integration.zsh ]] && source ~/.iterm2_shell_integration.zsh
+
+# Add additional path exports
+#test -e "${HOME}/.zsh_path_exports_local" && source "${HOME}/.zsh_path_exports_local" || true
+[[ -r "$HOME/.zsh_path_exports_local" ]] && source "$HOME/.zsh_path_exports_local"
