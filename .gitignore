@@ -1,5 +1,6 @@
 # Local configuration files
 *.local
+*_local
 
 # temp files and directories
 *.swp
