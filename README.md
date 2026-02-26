@@ -78,7 +78,7 @@ Then either restart your terminal or use `source ~/.zshrc` to make the changes i
 ## Testing
 Scripts and configurations have been tested with the following operating systems and terminals.
 
-* [macOS Catalina 10.15.7](https://support.apple.com/en-us/HT210642) - [macOS Tahoe 26.2](https://support.apple.com/en-us/125886)
+* [macOS Catalina 10.15.7](https://support.apple.com/en-us/HT210642) - [macOS Tahoe 26.3](https://support.apple.com/en-us/125886)
 * [iTerm2 Build 3.6.6](https://iterm2.com)
 * [Ubuntu 24.04](https://discourse.ubuntu.com/t/ubuntu-24-04-lts-noble-numbat-release-notes/39890)
 
