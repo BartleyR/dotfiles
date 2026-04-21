@@ -1,7 +1,0 @@
-# Add local paths below
-
-typeset -U PATH path
-path=(
-  $path
-)
-export PATH
