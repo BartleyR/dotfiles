@@ -47,7 +47,9 @@ link_home() {
 
 	if [ "$resp" = 'y' -o "$resp" = 'Y' ] ; then
 		echo ""
-		for file in $( ls -A ./$LOC_HOME_FILES/ | grep -vE '\.exclude*|\.ex*|\.git$|\.gitignore|.*.md|\.*_local' ) ; do
+
+		# Link all files except excluded and _local files
+		for file in ${(f)"$(ls -A ./$LOC_HOME_FILES/ | grep -vE '\.exclude*|\.ex*|\.git$|\.gitignore|.*.md|.*_local')"} ; do
 			if [ -f $HOME/$file ] ; then
 				read -p "    >> $file already exists, overwrite? (y/n) : " resp
 				if [ "$resp" = 'y' -o "$resp" = 'Y' ] ; then
@@ -61,6 +63,23 @@ link_home() {
 				ln -sv "$PWD/$LOC_HOME_FILES/$file" "$HOME"
 			fi
 		done
+
+		# Copy _local files instead of linking
+		for file in ${(f)"$(ls -A ./$LOC_HOME_FILES/ | grep -E '.*_local')"} ; do
+			if [ -f $HOME/$file ] ; then
+				read -p "    >> $file already exists, overwrite? (y/n) : " resp
+				if [ "$resp" = 'y' -o "$resp" = 'Y' ] ; then
+					cp -v "$PWD/$LOC_HOME_FILES/$file" "$HOME"
+					echo ""
+				else
+					echo "       >> Did not overwrite $file"
+				fi
+			else
+				echo "    >> Copying $file to $HOME"
+				cp -v "$PWD/$LOC_HOME_FILES/$file" "$HOME"
+			fi
+		done
+
 		echo " >> Symlinking to home directory complete"
 	else
 		echo ""
@@ -68,6 +87,7 @@ link_home() {
 		return -1
 	fi
 }
+
 
 # SUmmary post-install information
 summary() {
