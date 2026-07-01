@@ -42,50 +42,66 @@ directories () {
 # Is this where rsync shines?
 # TODO - add support for -f and --force
 link_home() {
-	echo " >> Linking dotfiles from this repo to the home directory"
-	read -p " >> Proceed? (y/n) : " resp
+  local resp src path file dst mode oldopts
 
-	if [ "$resp" = 'y' -o "$resp" = 'Y' ] ; then
-		echo ""
+  [[ ${LOC_HOME_FILES:-} ]] || { echo " >> LOC_HOME_FILES is not set"; return 1; }
+  src=$PWD/$LOC_HOME_FILES
+  [[ -d $src ]] || { echo " >> Home files directory not found: $src"; return 1; }
 
-		# Link all files except excluded and _local files
-		for file in ${(f)"$(ls -A ./$LOC_HOME_FILES/ | grep -vE '\.exclude*|\.ex*|\.git$|\.gitignore|.*.md|.*_local')"} ; do
-			if [ -f $HOME/$file ] ; then
-				read -p "    >> $file already exists, overwrite? (y/n) : " resp
-				if [ "$resp" = 'y' -o "$resp" = 'Y' ] ; then
-					rm "$HOME/$file"
-					ln -sfv "$PWD/$LOC_HOME_FILES/$file" "$HOME"
-					echo ""
-				else
-					echo "       >> Did not overwrite $file"
-				fi
-			else
-				ln -sv "$PWD/$LOC_HOME_FILES/$file" "$HOME"
-			fi
-		done
+  echo " >> Linking dotfiles from this repo to the home directory"
+  read -r -p " >> Proceed? (y/n) : " resp
+  [[ $resp == [yY] ]] || {
+    echo ""
+    echo " >> Symlinking to home directory cancelled by user"
+    return 1
+  }
 
-		# Copy _local files instead of linking
-		for file in ${(f)"$(ls -A ./$LOC_HOME_FILES/ | grep -E '.*_local')"} ; do
-			if [ -f $HOME/$file ] ; then
-				read -p "    >> $file already exists, overwrite? (y/n) : " resp
-				if [ "$resp" = 'y' -o "$resp" = 'Y' ] ; then
-					cp -v "$PWD/$LOC_HOME_FILES/$file" "$HOME"
-					echo ""
-				else
-					echo "       >> Did not overwrite $file"
-				fi
-			else
-				echo "    >> Copying $file to $HOME"
-				cp -v "$PWD/$LOC_HOME_FILES/$file" "$HOME"
-			fi
-		done
+  echo ""
 
-		echo " >> Symlinking to home directory complete"
-	else
-		echo ""
-		echo " >> Symlinking to home directory cancelled by user"
-		return -1
-	fi
+  oldopts=$(shopt -p nullglob dotglob failglob || :)
+  shopt -s nullglob dotglob
+  shopt -u failglob
+
+  for path in "$src"/*; do
+    file=${path##*/}
+    dst=$HOME/$file
+
+    case $file in
+      *_local*) mode=copy ;;
+      *.exclude*|*.ex*|*.git|*.gitignore*|*.md) continue ;;
+      *) mode=link ;;
+    esac
+
+    if [[ -e $dst || -L $dst ]]; then
+      read -r -p "    >> $file already exists, overwrite? (y/n) : " resp
+      [[ $resp == [yY] ]] || {
+        echo "       >> Did not overwrite $file"
+        continue
+      }
+
+      [[ -d $dst && ! -L $dst ]] && {
+        echo "       >> $file already exists as a directory; remove it manually if you want to replace it"
+        continue
+      }
+
+      rm -f "$dst" || {
+        echo "       >> Failed to remove $dst"
+        continue
+      }
+    elif [[ $mode == copy ]]; then
+      echo "    >> Copying $file to $HOME"
+    fi
+
+    if [[ $mode == copy ]]; then
+      cp -v "$path" "$dst"
+    else
+      ln -sfv "$path" "$dst"
+    fi
+  done
+
+  eval "$oldopts"
+
+  echo " >> Symlinking to home directory complete"
 }
 
 
